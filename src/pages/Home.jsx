@@ -1,4 +1,65 @@
+// import React, { useEffect, useState } from 'react';
+// import axios from 'axios';
+// import EmployeeForm from './employeeForm';
+// import EmployeeDetail from './employeeDetail';
 
+// const Home = () => {
+//     const [employees, setEmployees] = useState([]);
+//     const [editingEmployee, setEditingEmployee] = useState(null);
+//     const [selectedEmployee, setSelectedEmployee] = useState(null);
+
+//     const fetchEmployees = async () => {
+//         const res = await axios.get('http://localhost:xxxx/api/employee'); // Replace xxxx with your port
+//         setEmployees(res.data);
+//     };
+
+//     useEffect(() => {
+//         fetchEmployees();
+//     }, []);
+
+//     const deleteEmployee = async (id) => {
+//         await axios.delete(`http://localhost:xxxx/api/employee/${id}`);
+//         fetchEmployees();
+//     };
+//     return (
+//         <div className="p-4">
+//             <h2 className="text-2xl font-bold mb-4">Employee List</h2>
+
+//             <EmployeeForm onSuccess={fetchEmployees} editingEmployee={editingEmployee} />
+
+//             <table className="w-full border mt-6">
+//                 <thead>
+//                 <tr className="bg-gray-200">
+//                     <th className="p-2">Name</th>
+//                     <th className="p-2">Position</th>
+//                     <th className="p-2">Salary</th>
+//                     <th className="p-2">Actions</th>
+//                 </tr>
+//                 </thead>
+//                 <tbody>
+//                 {employees.map(emp => (
+//                     <tr key={emp.EmployeeId} className="border-b">
+//                     <td className="p-2">{emp.Name}</td>
+//                     <td className="p-2">{emp.Position}</td>
+//                     <td className="p-2">₱{emp.Salary}</td>
+//                     <td className="p-2 space-x-2">
+//                         <button onClick={() => setSelectedEmployee(emp)} className="bg-blue-500 text-white px-2 py-1 rounded">View</button>
+//                         <button onClick={() => setEditingEmployee(emp)} className="bg-yellow-500 text-white px-2 py-1 rounded">Edit</button>
+//                         <button onClick={() => deleteEmployee(emp.EmployeeId)} className="bg-red-500 text-white px-2 py-1 rounded">Delete</button>
+//                     </td>
+//                     </tr>
+//                 ))}
+//                 </tbody>
+//             </table>
+
+//             {selectedEmployee && (
+//                 <EmployeeDetail employee={selectedEmployee} onClose={() => setSelectedEmployee(null)} />
+//             )}
+//             </div>
+//     )
+// }
+
+// export default Home
 
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
